@@ -1,15 +1,16 @@
 library(tidyverse)
 library(here)
 library(ggforce)
-library(showtext)
-library(extrafont)
+#library(showtext)
+#library(extrafont)
 library(ggtext)
 
 
-# downloaded data from here, imported to excel
+# downloaded data from here, copied to excel, and imported from there. 
+# the .csv dataset is in the GitHub repo.
 # http://atmenv.envi.osakafu-u.ac.jp/aono/kyophenotemp4/
 
-data <- read.csv(here("kyoto2.csv")) %>% janitor::clean_names()
+data <- read.csv(here("day_19","kyoto2.csv")) %>% janitor::clean_names()
 head(data)
 
 data <- 
@@ -302,7 +303,7 @@ ggplot()+
 plot
 
 # save
-ggsave(plot, filename = here("kyotoplot.png"),
+ggsave(plot, filename = here("day_19","kyotoplot.png"),
        dpi = 350,
        width = 11.3,
        height = 7.1
